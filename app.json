@@ -4,16 +4,8 @@
       "description": "Your HubSpot API Key, which you can find at https://app.hubspot.com/keys/get",
       "required": true
     },
-    "USERNAME": {
-      "description": "USERNAME",
-      "required": "true"
-    },
-    "PASSWORD": {
-      "description": "PASSWORD",
-      "required": "true"
-    },
     "TASK_DESCRIPTION": {
-      "description": "TASK_DESCRIPTION",
+      "description": "A description of what the task is.",
       "required": "true"
     }
   }
