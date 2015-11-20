@@ -1,29 +1,20 @@
 <?php
 
-//Configuration
-$taskDescription = getenv('TASK_DESCRIPTION');
-
-//The username and password must match what you enter in your HubSpot workflow webhook
-$webhookUsername = getenv('USERNAME');
-$webhookPassword = getenv('PASSWORD');
-
-$hubspotApiKey = getenv('HUBSPOT_API_KEY');
 
 
-
-
-
-
-
-if ($_SERVER['PHP_AUTH_USER'] != $webhookUsername || $_SERVER['PHP_AUTH_PW'] != $webhookPassword || $_SERVER['REQUEST_METHOD'] != 'POST'){
+if($_SERVER['REQUEST_METHOD'] != 'POST'){
 	exit;
 }
 
 
+
+$taskDescription = getenv('TASK_DESCRIPTION');
+$hubspotApiKey = getenv('HUBSPOT_API_KEY');
+
+
+
 $json = $HTTP_RAW_POST_DATA;
-
 $array = json_decode($json, true);
-
 $contactId = $array['vid'];
 
 
